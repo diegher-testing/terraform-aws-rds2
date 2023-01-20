@@ -1,7 +1,7 @@
 provider "aws" {
-  region = var.aws_region
+  region = "${var.aws_region}"
   assume_role {
-      role_arn = "arn:aws:iam:"+var.target_account_id+":role/"+var.terraform_role
+      role_arn = "arn:aws:iam::${var.target_account_id}:role/${var.terraform_role}"
     }
 }
 
