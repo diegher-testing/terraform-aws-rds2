@@ -14,3 +14,12 @@ variable "db_password" {
 variable "aws_region" {
   description = "AWS Region ID to deploy to infrastructures"
 }
+
+
+variable "target_account_id" {
+  description = "AWS Account ID to deploy to infrastructures"
+}
+
+variable "terraform_role" {
+  description = "Role to assume to in AWS target account to deploy to infrastructures"
+}
