@@ -1,5 +1,9 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
+  alias = "terraform_automation_role"
+  assume_role {
+      role_arn = "arn:aws:iam:"+var.target_account_id+":role/"+var.terraform_role
+    }
 }
 
 data "aws_availability_zones" "available" {}
